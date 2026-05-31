@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-playfair: 'Space Grotesk', system-ui, sans-serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #080808;
+  color: #EFEFEF;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Gold rule divider */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #5AAB8E, transparent);
+}
+
+/* Gold text gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #5AAB8E 0%, #7FCAB5 50%, #5AAB8E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section padding utility */
+.section-pad {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 1024px) {
+  .section-pad {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+/* Noise overlay for texture */
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #080808; }
+::-webkit-scrollbar-thumb { background: #5AAB8E; border-radius: 3px; }
+
+/* Focus ring */
+*:focus-visible {
+  outline: 2px solid #7FCAB5;
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   LIGHT MODE OVERRIDES | palette:
+   bg       #F5F3EE   surface  #FFFFFF
+   border   #E0DDD6   logo     #5AAB8E
+   accent   #2E6E58   text     #111111
+   ============================================================ */
+
+/* Base */
+html.light body {
+  background-color: #F5F3EE;
+  color: #111111;
+}
+html.light ::-webkit-scrollbar-track { background: #F5F3EE; }
+html.light ::-webkit-scrollbar-thumb { background: #5AAB8E; }
+html.light *:focus-visible { outline-color: #5AAB8E; }
+
+/* Section backgrounds */
+html.light .bg-navy-950 { background-color: #F5F3EE !important; }
+html.light .bg-navy-900 { background-color: #FFFFFF  !important; }
+
+/* Cards / panels: all bg-navy-800 opacity variants */
+html.light [class*="bg-navy-800"] { background-color: #FFFFFF !important; box-shadow: 0 1px 3px rgba(17,17,17,0.06), 0 0 0 1px #E0DDD6; }
+html.light [class*="bg-navy-700"] { background-color: rgba(255,255,255,0.7) !important; }
+
+/* Icon background chips */
+html.light [class*="bg-gold-600"] { background-color: rgba(46,110,88,0.08) !important; }
+
+/* Accent / brand text */
+html.light .text-gold-400,
+html.light .text-gold-500 { color: #5AAB8E !important; }
+html.light .text-gold-600,
+html.light .text-gold-700 { color: #2E6E58 !important; }
+
+/* Accent gradient heading */
+html.light .text-gold-gradient {
+  background: linear-gradient(135deg, #2E6E58 0%, #5AAB8E 50%, #2E6E58 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gold rule */
+html.light .gold-rule {
+  background: linear-gradient(90deg, transparent, #E0DDD6, transparent);
+}
+
+/* Accent borders (gold-*) */
+html.light [class*="border-gold"] { border-color: #E0DDD6 !important; }
+
+/* Accent buttons */
+html.light .bg-gold-500,
+html.light .hover\:bg-gold-500:hover { background-color: #5AAB8E !important; }
+html.light .bg-gold-400,
+html.light .hover\:bg-gold-400:hover { background-color: #2E6E58 !important; }
+
+/* White text → #111111 */
+html.light .text-white       { color: #111111 !important; }
+html.light .text-white\/80   { color: rgba(17,17,17,0.82) !important; }
+html.light .text-white\/70   { color: rgba(17,17,17,0.72) !important; }
+html.light .text-white\/60   { color: rgba(17,17,17,0.62) !important; }
+html.light .text-white\/50   { color: rgba(17,17,17,0.55) !important; }
+html.light .text-white\/45   { color: rgba(17,17,17,0.50) !important; }
+html.light .text-white\/40   { color: rgba(17,17,17,0.45) !important; }
+html.light .text-white\/35   { color: rgba(17,17,17,0.40) !important; }
+html.light .text-white\/30   { color: rgba(17,17,17,0.35) !important; }
+html.light .text-white\/25   { color: rgba(17,17,17,0.30) !important; }
+html.light .text-white\/20   { color: rgba(17,17,17,0.25) !important; }
+html.light .text-white\/15   { color: rgba(17,17,17,0.20) !important; }
+
+/* White borders → #E0DDD6 */
+html.light [class*="border-white"] { border-color: #E0DDD6 !important; }
+
+/* Inputs */
+html.light input,
+html.light textarea,
+html.light select {
+  color: #111111 !important;
+  background-color: #FFFFFF !important;
+  border-color: #E0DDD6 !important;
+}
+html.light [class*="placeholder-white"]::placeholder { color: rgba(17,17,17,0.35) !important; }
+
+/* Decorative large numbers */
+html.light [class*="text-white\/\[0\.015\]"] { color: rgba(17,17,17,0.04) !important; }
+
+/* Mobile menu nav text */
+html.light nav button { color: rgba(17,17,17,0.75) !important; }
+
