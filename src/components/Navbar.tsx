@@ -120,9 +120,9 @@ export default function Navbar() {
               href="https://intel.portiveimpex.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-4 pl-4 border-l border-white/10 flex items-center gap-1.5 text-xs text-white/35 hover:text-white/60 transition-colors duration-200"
+              className="ml-4 px-4 py-2 flex items-center gap-1.5 border border-white/20 text-white/70 text-sm font-medium tracking-wide hover:border-white/40 hover:text-white transition-all duration-200"
             >
-              <Lock size={12} />
+              <Lock size={14} />
               Intel Portal
             </a>
 
@@ -194,9 +194,9 @@ export default function Navbar() {
                 href="https://intel.portiveimpex.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 flex items-center justify-center gap-1.5 py-2 text-sm text-white/35 hover:text-white/60 transition-colors"
+                className="mt-3 py-3 border border-white/20 text-white/80 flex items-center justify-center gap-2 text-base font-medium tracking-wide hover:border-white/40 hover:text-white transition-all"
               >
-                <Lock size={13} />
+                <Lock size={16} />
                 Intel Portal
               </motion.a>
             </nav>
