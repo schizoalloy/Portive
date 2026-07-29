@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail, Lock } from "lucide-react";
 
 const navLinks = [
   { href: "#services", label: "Services" },
@@ -85,8 +85,17 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 flex items-center justify-center text-white/25 text-xs">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-white/25 text-xs">
           <p>© {new Date().getFullYear()} Portive Exports Pvt. Ltd. All rights reserved.</p>
+          <a
+            href="https://intel.portiveimpex.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-white/25 hover:text-white/45 transition-colors"
+          >
+            <Lock size={11} />
+            Sign in to Intel
+          </a>
         </div>
       </div>
     </footer>

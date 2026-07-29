@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, Lock } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 
 const links = [
@@ -116,6 +116,16 @@ export default function Navbar() {
               </AnimatePresence>
             </button>
 
+            <a
+              href="https://intel.portiveimpex.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-4 pl-4 border-l border-white/10 flex items-center gap-1.5 text-xs text-white/35 hover:text-white/60 transition-colors duration-200"
+            >
+              <Lock size={12} />
+              Intel Portal
+            </a>
+
             <button
               onClick={() => handleNav("#contact")}
               className="ml-2 px-5 py-2 border border-gold-500 text-gold-400 text-sm font-medium tracking-wider hover:bg-gold-500 hover:text-navy-950 transition-all duration-300"
@@ -176,6 +186,19 @@ export default function Navbar() {
               >
                 Get in Touch
               </motion.button>
+
+              <motion.a
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.55 }}
+                href="https://intel.portiveimpex.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 flex items-center justify-center gap-1.5 py-2 text-sm text-white/35 hover:text-white/60 transition-colors"
+              >
+                <Lock size={13} />
+                Intel Portal
+              </motion.a>
             </nav>
           </motion.div>
         )}
