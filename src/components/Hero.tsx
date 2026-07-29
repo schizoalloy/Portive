@@ -5,7 +5,6 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import Image from "next/image";
 
 const stats = [
-  { value: "4", label: "Trade Corridors" },
   { value: "5", label: "Service Lines" },
   { value: "2026", label: "Est." },
   { value: "ISB", label: "Headquarters" },
@@ -121,7 +120,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.8 }}
-          className="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-8 border-t border-white/10 pt-10"
+          className="mt-20 grid grid-cols-3 gap-6 sm:gap-8 border-t border-white/10 pt-10"
         >
           {stats.map((s, i) => (
             <motion.div

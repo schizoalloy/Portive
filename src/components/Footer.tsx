@@ -6,7 +6,6 @@ import { Linkedin, Mail, Lock } from "lucide-react";
 const navLinks = [
   { href: "#services", label: "Services" },
   { href: "#products", label: "Products" },
-  { href: "#corridors", label: "Corridors" },
   { href: "#why-us", label: "Why Us" },
   { href: "#about", label: "About" },
   { href: "#team", label: "Team" },
