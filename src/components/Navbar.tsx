@@ -122,7 +122,7 @@ export default function Navbar() {
               className="ml-4 px-4 py-2 flex items-center gap-1.5 border border-white/20 text-white/70 text-sm font-medium tracking-wide hover:border-white/40 hover:text-white transition-all duration-200"
             >
               <Lock size={14} />
-              Intel Portal
+              Login
             </a>
 
             <button
@@ -196,7 +196,7 @@ export default function Navbar() {
                 className="mt-3 py-3 border border-white/20 text-white/80 flex items-center justify-center gap-2 text-base font-medium tracking-wide hover:border-white/40 hover:text-white transition-all"
               >
                 <Lock size={16} />
-                Intel Portal
+                Login
               </motion.a>
             </nav>
           </motion.div>
