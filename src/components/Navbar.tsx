@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sun, Moon, Lock } from "lucide-react";
+import { Menu, X, Sun, Moon, Lock, Map } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 
 const links = [
@@ -67,18 +67,18 @@ export default function Navbar() {
               className="h-12 w-auto object-contain"
               priority
             />
-            <span className="font-display italic text-white/90 text-lg tracking-wide">
+            <span className="font-display italic text-white/90 text-lg tracking-wide whitespace-nowrap">
               Portive Exports
             </span>
           </a>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center gap-6" aria-label="Main navigation">
             {links.map((l) => (
               <button
                 key={l.href}
                 onClick={() => handleNav(l.href)}
-                className="text-sm font-medium text-white/70 hover:text-gold-400 transition-colors duration-200 tracking-wide"
+                className="text-sm font-medium text-white/70 hover:text-gold-400 transition-colors duration-200 tracking-wide whitespace-nowrap"
               >
                 {l.label}
               </button>
@@ -116,10 +116,20 @@ export default function Navbar() {
             </button>
 
             <a
+              href="https://atlas.portiveimpex.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-4 px-4 py-2 flex items-center gap-1.5 whitespace-nowrap border border-white/20 text-white/70 text-sm font-medium tracking-wide hover:border-white/40 hover:text-white transition-all duration-200"
+            >
+              <Map size={14} />
+              Trade Atlas
+            </a>
+
+            <a
               href="https://intel.portiveimpex.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-4 px-4 py-2 flex items-center gap-1.5 border border-white/20 text-white/70 text-sm font-medium tracking-wide hover:border-white/40 hover:text-white transition-all duration-200"
+              className="px-4 py-2 flex items-center gap-1.5 whitespace-nowrap border border-white/20 text-white/70 text-sm font-medium tracking-wide hover:border-white/40 hover:text-white transition-all duration-200"
             >
               <Lock size={14} />
               Login
@@ -127,7 +137,7 @@ export default function Navbar() {
 
             <button
               onClick={() => handleNav("#contact")}
-              className="ml-2 px-5 py-2 border border-gold-500 text-gold-400 text-sm font-medium tracking-wider hover:bg-gold-500 hover:text-navy-950 transition-all duration-300"
+              className="ml-2 px-5 py-2 whitespace-nowrap border border-gold-500 text-gold-400 text-sm font-medium tracking-wider hover:bg-gold-500 hover:text-navy-950 transition-all duration-300"
             >
               Get in Touch
             </button>
@@ -185,6 +195,19 @@ export default function Navbar() {
               >
                 Get in Touch
               </motion.button>
+
+              <motion.a
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                href="https://atlas.portiveimpex.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 py-3 border border-white/20 text-white/80 flex items-center justify-center gap-2 text-base font-medium tracking-wide hover:border-white/40 hover:text-white transition-all"
+              >
+                <Map size={16} />
+                Trade Atlas
+              </motion.a>
 
               <motion.a
                 initial={{ opacity: 0 }}

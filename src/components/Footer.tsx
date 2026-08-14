@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Linkedin, Mail, Lock } from "lucide-react";
+import { Linkedin, Mail, Lock, Map } from "lucide-react";
 
 const navLinks = [
   { href: "#services", label: "Services" },
@@ -86,6 +86,15 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
           <p className="text-white/25 text-xs">© {new Date().getFullYear()} Portive Exports Pvt. Ltd. All rights reserved.</p>
+          <a
+            href="https://atlas.portiveimpex.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-white/60 hover:text-gold-400 text-sm transition-colors"
+          >
+            <Map size={13} />
+            China Trade Atlas
+          </a>
           <a
             href="https://intel.portiveimpex.com"
             target="_blank"
