@@ -134,16 +134,16 @@ export default function Navbar() {
           </nav>
 
           {/* Mobile right controls */}
-          <div className="lg:hidden flex items-center gap-3">
+          <div className="lg:hidden flex items-center gap-1">
             <button
               onClick={toggle}
               aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-              className="w-8 h-8 flex items-center justify-center text-white/60 hover:text-gold-400 transition-colors"
+              className="w-11 h-11 flex items-center justify-center text-white/60 hover:text-gold-400 transition-colors"
             >
               {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
             </button>
             <button
-              className="text-white/80 hover:text-gold-400 transition-colors"
+              className="w-11 h-11 flex items-center justify-center text-white/80 hover:text-gold-400 transition-colors"
               onClick={() => setOpen(!open)}
               aria-label={open ? "Close menu" : "Open menu"}
             >
