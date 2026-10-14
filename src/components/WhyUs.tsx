@@ -27,7 +27,7 @@ const points = [
     icon: Globe2,
     title: "Strong Regional Network",
     description:
-      "Established relationships with manufacturers in Pakistan's industrial belt, forwarding agents across four corridors, and customs brokers in Saudi Arabia, UAE, China, and Malaysia.",
+      "Established relationships with manufacturers in Pakistan's industrial belt, trusted freight forwarding agents, and customs brokers in key international markets.",
   },
   {
     icon: ShieldCheck,

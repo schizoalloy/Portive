@@ -5,7 +5,6 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import Image from "next/image";
 
 const stats = [
-  { value: "5", label: "Service Lines" },
   { value: "2026", label: "Est." },
   { value: "ISB", label: "Headquarters" },
 ];
@@ -77,7 +76,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
           className="font-display text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] text-white max-w-4xl"
         >
-          Industrial Trade,{" "}
+          Global Trade,{" "}
           <span className="text-gold-gradient">Simplified.</span>
         </motion.h1>
 
@@ -88,9 +87,9 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.5 }}
           className="mt-6 text-lg lg:text-xl text-white/60 max-w-2xl leading-relaxed font-body"
         >
-          Portive Exports connects Pakistan's industrial manufacturing belt with
-          regional buyers across Saudi Arabia, UAE, China, and Malaysia.
-          Machinery, freight, and full-service trade facilitation under one roof.
+          Portive Exports connects Pakistani businesses with suppliers and buyers
+          worldwide. Sourcing, documentation, freight, and full-service trade
+          facilitation under one roof.
         </motion.p>
 
         {/* CTAs */}
@@ -120,7 +119,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.8 }}
-          className="mt-20 grid grid-cols-3 gap-6 sm:gap-8 border-t border-white/10 pt-10"
+          className="mt-20 grid grid-cols-2 gap-6 sm:gap-8 max-w-md border-t border-white/10 pt-10"
         >
           {stats.map((s, i) => (
             <motion.div
@@ -143,12 +142,12 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <motion.button
-        onClick={() => scrollTo("services")}
+        onClick={() => scrollTo("upcoming")}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 hover:text-gold-400 transition-colors"
-        aria-label="Scroll to services"
+        aria-label="Scroll to upcoming events"
       >
         <span className="text-xs tracking-[0.2em] uppercase">Scroll</span>
         <motion.div

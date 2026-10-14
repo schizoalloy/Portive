@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building2, Award, Users, MapPin } from "lucide-react";
+import { Building2, MapPin } from "lucide-react";
 
 const credentials = [
   { label: "SECP Incorporated", sub: "Registered Private Limited Company" },
@@ -12,8 +12,6 @@ const credentials = [
 
 const stats = [
   { icon: Building2, value: "2026", label: "Year Founded" },
-  { icon: Award, value: "4", label: "Credentials" },
-  { icon: Users, value: "2", label: "Senior Directors" },
   { icon: MapPin, value: "ISB", label: "Headquarters" },
 ];
 
@@ -50,10 +48,9 @@ export default function About() {
               manufacturing belt and our key export markets.
             </p>
             <p className="text-white/50 text-base leading-relaxed mb-10">
-              Our first active client, Anwar Al Fateh Metals Company (Riyadh), reflects the type of
-              regional industrial partner we are built to serve: established buyers who need dependable
-              sourcing, seamless documentation, and a team that understands the practical realities
-              of cross-border machinery trade.
+              We are built to serve established buyers who need dependable sourcing, seamless
+              documentation, and a team that understands the practical realities of cross-border
+              trade.
             </p>
 
             {/* Mission statement */}

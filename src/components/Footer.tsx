@@ -4,8 +4,8 @@ import Image from "next/image";
 import { Linkedin, Mail, Lock, Map } from "lucide-react";
 
 const navLinks = [
+  { href: "#upcoming", label: "Canton Fair" },
   { href: "#services", label: "Services" },
-  { href: "#products", label: "Products" },
   { href: "#why-us", label: "Why Us" },
   { href: "#about", label: "About" },
   { href: "#team", label: "Team" },
@@ -32,8 +32,8 @@ export default function Footer() {
             />
             <p className="text-gold-500 text-sm font-display italic mb-3">Trade Simplified.</p>
             <p className="text-white/30 text-sm leading-relaxed max-w-xs">
-              A modern Pakistani import/export company focused on industrial machinery trading
-              and end-to-end trade facilitation.
+              A modern Pakistani import/export company focused on sourcing, procurement, and
+              end-to-end trade facilitation.
             </p>
           </div>
 
@@ -93,7 +93,7 @@ export default function Footer() {
             className="flex items-center gap-1.5 text-white/60 hover:text-gold-400 text-sm transition-colors"
           >
             <Map size={13} />
-            China Trade Atlas
+            Trade Atlas
           </a>
           <a
             href="https://intel.portiveimpex.com"

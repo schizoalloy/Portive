@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import {
-  Cog,
   FileText,
   PackageSearch,
   ShoppingBag,
@@ -12,13 +11,6 @@ import {
 } from "lucide-react";
 
 const services = [
-  {
-    icon: Cog,
-    title: "Machinery & Equipment Trading",
-    description:
-      "Source, inspect, and supply industrial machinery (new and professionally refurbished) from Pakistan's manufacturing belt to regional buyers. Every unit verified before shipment.",
-    tags: ["CNC Machines", "Lathes", "Hydraulic Presses", "Compressors"],
-  },
   {
     icon: FileText,
     title: "Export Services",
@@ -44,7 +36,7 @@ const services = [
     icon: Truck,
     title: "Freight Forwarding & Logistics",
     description:
-      "FCL and LCL sea freight coordination, forwarder management, real-time shipment tracking, and Bill of Lading coordination across all active corridors.",
+      "FCL and LCL sea freight coordination, forwarder management, real-time shipment tracking, and Bill of Lading coordination from origin to final destination.",
     tags: ["FCL / LCL", "Forwarder Management", "B/L Coordination", "Tracking"],
   },
 ];
@@ -84,8 +76,8 @@ export default function Services() {
             End-to-End Trade <span className="text-gold-gradient">Services</span>
           </h2>
           <p className="mt-4 text-white/50 max-w-2xl text-base lg:text-lg leading-relaxed">
-            Five integrated service lines that cover every stage of international trade, from
-            sourcing through documentation to final delivery.
+            Integrated services that cover every stage of international trade, from sourcing
+            through documentation to final delivery.
           </p>
         </motion.div>
 
@@ -95,15 +87,13 @@ export default function Services() {
           variants={container}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
-          {services.map((svc, i) => (
+          {services.map((svc) => (
             <motion.div
               key={svc.title}
               variants={item}
-              className={`group relative bg-navy-800/60 border border-white/[0.06] hover:border-gold-600/40 p-8 transition-all duration-400 hover:-translate-y-1 ${
-                i === 4 ? "md:col-span-2 lg:col-span-1" : ""
-              }`}
+              className="group relative bg-navy-800/60 border border-white/[0.06] hover:border-gold-600/40 p-8 transition-all duration-400 hover:-translate-y-1"
             >
               {/* Gold corner accent */}
               <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold-600/60 group-hover:border-gold-400 transition-colors duration-300" />

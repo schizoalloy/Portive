@@ -24,19 +24,19 @@ export const metadata: Metadata = {
     apple: "/logo.png",
   },
   description:
-    "A modern Pakistani import/export company specialising in industrial machinery trading and end-to-end trade facilitation across Pakistan, Saudi Arabia, UAE, China, and Malaysia.",
+    "A modern Pakistani import/export company offering sourcing, procurement, export and import services, freight forwarding, and end-to-end trade facilitation.",
   keywords: [
     "import export Pakistan",
-    "industrial machinery trading",
+    "sourcing and procurement Pakistan",
     "freight forwarding",
     "trade facilitation",
-    "CNC machines Pakistan",
+    "Canton Fair sourcing",
     "Portive Exports",
   ],
   openGraph: {
     title: "Portive Exports Pvt. Ltd. · Trade Simplified.",
     description:
-      "End-to-end trade facilitation and industrial machinery supply across key regional corridors.",
+      "End-to-end trade facilitation: sourcing, documentation, and freight under one roof.",
     url: "https://portiveimpex.com",
     siteName: "Portive Exports",
     locale: "en_US",

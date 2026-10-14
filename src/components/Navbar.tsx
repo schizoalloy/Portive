@@ -7,8 +7,8 @@ import { Menu, X, Sun, Moon, Lock, Map } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 
 const links = [
+  { href: "#upcoming", label: "Canton Fair" },
   { href: "#services", label: "Services" },
-  { href: "#products", label: "Products" },
   { href: "#why-us", label: "Why Us" },
   { href: "#about", label: "About" },
   { href: "#team", label: "Team" },
@@ -73,7 +73,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-6" aria-label="Main navigation">
+          <nav className="hidden xl:flex items-center gap-6" aria-label="Main navigation">
             {links.map((l) => (
               <button
                 key={l.href}
@@ -144,7 +144,7 @@ export default function Navbar() {
           </nav>
 
           {/* Mobile right controls */}
-          <div className="lg:hidden flex items-center gap-1">
+          <div className="xl:hidden flex items-center gap-1">
             <button
               onClick={toggle}
               aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}

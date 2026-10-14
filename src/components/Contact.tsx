@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, MapPin, ExternalLink, Send, CheckCircle } from "lucide-react";
 
@@ -16,6 +16,17 @@ export default function Contact() {
     service: "",
     message: "",
   });
+
+  // Lets CTAs elsewhere on the page (e.g. the Canton Fair "Place Order" button) preselect a service.
+  useEffect(() => {
+    const onSelect = (e: Event) => {
+      const service = (e as CustomEvent<string>).detail;
+      setForm((prev) => ({ ...prev, service }));
+      setStatus((prev) => (prev === "sending" ? prev : "idle"));
+    };
+    window.addEventListener("portive:select-service", onSelect);
+    return () => window.removeEventListener("portive:select-service", onSelect);
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -63,9 +74,9 @@ export default function Contact() {
             Start a Trade <span className="text-gold-gradient">Conversation</span>
           </h2>
           <p className="mt-4 text-white/50 max-w-xl text-base leading-relaxed">
-            Whether you're sourcing machinery, planning an export shipment, or looking for a
-            reliable procurement partner in Pakistan. Get in touch and we'll respond within
-            one business day.
+            Whether you're placing a Canton Fair order, sourcing products, planning an export
+            shipment, or looking for a reliable procurement partner in Pakistan. Get in touch
+            and we'll respond within one business day.
           </p>
         </motion.div>
 
@@ -138,11 +149,12 @@ export default function Contact() {
 
           {/* Right: form */}
           <motion.div
+            id="enquiry"
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="lg:col-span-3"
+            className="lg:col-span-3 scroll-mt-28"
           >
             <AnimatePresence mode="wait">
               {status === "error" ? (
@@ -241,7 +253,7 @@ export default function Contact() {
                       className="bg-navy-800/60 border border-white/10 focus:border-gold-500/60 text-white/80 text-sm px-4 py-3 outline-none transition-colors duration-200 appearance-none"
                     >
                       <option value="" className="bg-navy-900">Select a service (optional)</option>
-                      <option value="machinery-trading" className="bg-navy-900">Machinery &amp; Equipment Trading</option>
+                      <option value="canton-fair" className="bg-navy-900">Canton Fair</option>
                       <option value="export-services" className="bg-navy-900">Export Services</option>
                       <option value="import-services" className="bg-navy-900">Import Services</option>
                       <option value="sourcing-procurement" className="bg-navy-900">Sourcing &amp; Procurement</option>
@@ -261,7 +273,11 @@ export default function Contact() {
                       rows={5}
                       value={form.message}
                       onChange={handleChange}
-                      placeholder="Describe your trade requirement: machinery type, quantity, corridor, timeline..."
+                      placeholder={
+                        form.service === "canton-fair"
+                          ? "What would you like ordered from the Canton Fair: product, specs, quantity, target price, delivery timeline..."
+                          : "Describe your trade requirement: product, quantity, destination, timeline..."
+                      }
                       className="bg-navy-800/60 border border-white/10 focus:border-gold-500/60 text-white/80 placeholder-white/20 text-sm px-4 py-3 outline-none transition-colors duration-200 resize-none"
                     />
                   </div>

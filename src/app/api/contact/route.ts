@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const TO = process.env.CONTACT_TO_EMAIL ?? "support@portiveimpex.com";
 
 const serviceLabels: Record<string, string> = {
-  "machinery-trading": "Machinery & Equipment Trading",
+  "canton-fair": "Canton Fair",
   "export-services": "Export Services",
   "import-services": "Import Services",
   "sourcing-procurement": "Sourcing & Procurement",
@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
     from: "Portive Exports Website <noreply@portiveimpex.com>", // swap to "noreply@portiveimpex.com" once the domain is verified in Resend dashboard
     to: [TO],
     replyTo: email.trim(),
-    subject: `Trade Enquiry from ${name.trim()}${company ? `, ${company.trim()}` : ""}`,
+    subject: `${service === "canton-fair" ? "Canton Fair Order" : "Trade Enquiry"} from ${name.trim()}${company ? `, ${company.trim()}` : ""}`,
     html: `
       <div style="font-family:system-ui,sans-serif;max-width:600px;margin:0 auto;background:#080808;border-radius:4px;overflow:hidden;">
 
